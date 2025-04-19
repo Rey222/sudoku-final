@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Сердечки -->
+    <LinearLayout
+        android:id="@+id/livesLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/heart1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/heart_icon"
+            android:contentDescription="Heart 1"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/heart2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/heart_icon"
+            android:contentDescription="Heart 2"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/heart3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/heart_icon"
+            android:contentDescription="Heart 3" />
+    </LinearLayout>
+
+    <!-- Игровое поле -->
+    <com.example.sudoku.SudokuBoard
+        android:id="@+id/SudokuBoard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonsLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/livesLayout"
+        app:layout_constraintDimensionRatio="1:1" />
+
+    <!-- Кнопки -->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/backToMenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SudokuBoard">
+
+        <GridLayout
+            android:id="@+id/numberButtonsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="3"
+            android:padding="8dp">
+
+            <!-- Кнопки чисел -->
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:onClick="onNumberButtonClick"
+                android:text="1"
+                android:textSize="24sp"
+                android:backgroundTint="#FF33B5E5" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:onClick="onNumberButtonClick"
+                android:text="2"
+                android:textSize="24sp"
+                android:backgroundTint="#FF33B5E5" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:onClick="onNumberButtonClick"
+                android:text="3"
+                android:textSize="24sp"
+                android:backgroundTint="#FF33B5E5" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:onClick="onNumberButtonClick"
+                android:text="4"
+                android:textSize="24sp"
+                android:backgroundTint="#FF33B5E5" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:onClick="onNumberButtonClick"
+                android:text="5"
+                android:textSize="24sp"
+                android:backgroundTint="#FF33B5E5" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:onClick="onNumberButtonClick"
+                android:text="6"
+                android:textSize="24sp"
+                android:backgroundTint="#FF33B5E5" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:onClick="onNumberButtonClick"
+                android:text="7"
+                android:textSize="24sp"
+                android:backgroundTint="#FF33B5E5" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:onClick="onNumberButtonClick"
+                android:text="8"
+                android:textSize="24sp"
+                android:backgroundTint="#FF33B5E5" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:onClick="onNumberButtonClick"
+                android:text="9"
+                android:textSize="24sp"
+                android:backgroundTint="#FF33B5E5" />
+        </GridLayout>
+    </LinearLayout>
+
+    <!-- Кнопка "Вернуться в главное меню" -->
+    <Button
+        android:id="@+id/backToMenuButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Вернуться в главное меню"
+        android:textSize="18sp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- FrameLayout для диалогового окна -->
+    <FrameLayout
+        android:id="@+id/winFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#80000000"> <!-- Полупрозрачный фон -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:layout_gravity="center">
+
+            <!-- Картинка -->
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/clapping"
+                android:contentDescription="Поздравительная картинка"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Заголовок -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Поздравляем!"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Сообщение -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вы решили судоку!"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- FrameLayout для диалогового окна проигрыша -->
+    <FrameLayout
+        android:id="@+id/loseFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#80000000"> <!-- Полупрозрачный фон -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:layout_gravity="center">
+            <!-- Заголовок -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вы проиграли!"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Сообщение -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сделано 3 ошибки."
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/replayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Заново"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/white"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

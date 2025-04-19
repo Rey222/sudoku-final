@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="difficulty_levels">
+        <item>Легкий</item>
+        <item>Средний</item>
+        <item>Сложный</item>
+    </string-array>
+    <string name="select_difficulty_prompt">Выберите уровень сложности</string>
+</resources>
